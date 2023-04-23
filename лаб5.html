@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Tran-sitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>лаб5</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>   
+	<script>
+	function getRandomInRange(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	
+	$(document).ready(function () {
+		$("#but1").click(function () {
+			var k = getRandomInRange(1, 8);
+			var DIV=["#div1","#div2","#div3","#div4","#div5","#div6","#div7","#div8"];
+				for(var i = 1; i < 9; i++)
+				{
+					if(k==i)
+					{
+						$(DIV[i-1]).fadeIn(3000);
+					}
+				}
+		});
+	});
+	
+	$(document).ready(function () {
+		$("#but2").click(function () {
+			$("div").fadeOut();
+		});
+	});
+	</script>
+</head>
+<body>
+<center>
+	<button id="but1">Показать</button>
+	<button id="but2">Спрятать</button>
+	<br><br>
+		<div id="div1" style="width:80px;height:80px;display:none;background-color:rgb(255, 0, 0);">1</div>
+		<div id="div2" style="width:80px;height:80px;display:none;background-color:rgb(255, 255, 0);">2</div>
+		<div id="div3" style="width:80px;height:80px;display:none;background-color:rgb(10, 252, 10);">3</div>
+		<div id="div4" style="width:80px;height:80px;display:none;background-color:rgb(255, 136, 0);">4</div>
+		<div id="div5" style="width:80px;height:80px;display:none;background-color:rgb(55, 0, 255);">5</div>
+		<div id="div6" style="width:80px;height:80px;display:none;background-color:rgb(0, 255, 242);">6</div>
+		<div id="div7" style="width:80px;height:80px;display:none;background-color:rgb(255, 0, 212);">7</div>
+		<div id="div8" style="width:80px;height:80px;display:none;background-color:rgb(195, 0, 255);">8</div>
+</center>
+</body>
+</html>
